@@ -1,6 +1,6 @@
 {
     "name": "neuron-php/formatting",
-    "description": "Miscellaneous utility classes.",
+    "description": "Data formatters..",
     "type": "library",
     "license": "MIT",
     "authors": [
