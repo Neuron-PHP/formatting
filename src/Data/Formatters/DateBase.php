@@ -4,6 +4,26 @@ namespace Neuron\Data\Formatters;
 
 class DateBase
 {
+	private $_Format;
+
+	/**
+	 * @return mixed
+	 */
+	public function getFormat()
+	{
+		return $this->_Format;
+	}
+
+	/**
+	 * @param mixed $Format
+	 * @return DateBase
+	 */
+	public function setFormat( $Format )
+	{
+		$this->_Format = $Format;
+		return $this;
+	}
+
 	/**
 	 * @param array $Parts
 	 * @return bool
@@ -98,7 +118,7 @@ class DateBase
 	 */
 	public static function normalizeDate( string $Date ) : string
 	{
-		$Date = trim( $Date );
+		$Date  = trim( $Date );
 		$Parts = explode( ' ', $Date );
 
 		if( $Parts )

@@ -2,10 +2,15 @@
 
 namespace Neuron\Data\Formatters;
 
-class Time implements IFormatter
+class Time extends DateBase implements IFormatter
 {
+	public function __construct()
+	{
+		$this->setFormat( "g:i a" );
+	}
+
 	public function format( $Data ): string
 	{
-		// TODO: Implement format() method.
+		return date( $this->getFormat(), strtotime( $Data ) );
 	}
 }
