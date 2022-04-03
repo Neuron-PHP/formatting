@@ -2,6 +2,9 @@
 
 namespace Neuron\Data\Formatters;
 
+/**
+ * Date formatter
+ */
 class Date extends DateBase implements IFormatter
 {
 	public function __construct()

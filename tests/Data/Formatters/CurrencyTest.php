@@ -8,7 +8,7 @@ class CurrencyTest extends TestCase
 	{
 		$Formatter = new Currency();
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			"1.00",
 			$Formatter->format( 1 )
 		);
