@@ -2,6 +2,9 @@
 
 namespace Neuron\Data\Formatters;
 
+/**
+ * Base class for date based formatting.
+ */
 class DateBase
 {
 	private $_Format;

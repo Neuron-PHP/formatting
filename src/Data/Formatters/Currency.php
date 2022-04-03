@@ -2,6 +2,9 @@
 
 namespace Neuron\Data\Formatters;
 
+/**
+ * Currency formatter.
+ */
 class Currency implements IFormatter
 {
 	private $_Format;

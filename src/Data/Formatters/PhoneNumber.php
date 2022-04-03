@@ -2,6 +2,9 @@
 
 namespace Neuron\Data\Formatters;
 
+/**
+ * Phone number formatter.
+ */
 class PhoneNumber implements IFormatter
 {
     public function format( $Data ): string
