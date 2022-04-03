@@ -1,0 +1,1 @@
+{"version":1,"defects":{"CurrencyTest::testFormat":4},"times":{"FormatterTest::testTimeOnly":0.005,"FormatterTest::testDateTime":0,"FormatterTest::testDateOnly":0,"FormatterTest::testPhoneNumber":0,"CurrencyTest::testFormat":0.001,"DateTest::testFormat":0.001,"DateTimeTest::testFormat":0,"PhoneNumberTest::testFormat":0.001,"TimeTest::testFormat":0}}
