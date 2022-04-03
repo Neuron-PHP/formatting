@@ -1,6 +1,6 @@
 <?php
 
-use Neuron\Data\Formatters\PhoneNumber;
+use Neuron\Formatters\PhoneNumber;
 use PHPUnit\Framework\TestCase;
 
 class PhoneNumberTest extends TestCase

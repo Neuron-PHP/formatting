@@ -1,6 +1,6 @@
 <?php
 
-use Neuron\Data\Formatters\Time;
+use Neuron\Formatters\Time;
 use PHPUnit\Framework\TestCase;
 
 class TimeTest extends TestCase

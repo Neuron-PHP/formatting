@@ -1,6 +1,6 @@
 <?php
 
-use Neuron\Data\Formatters\DateTime;
+use Neuron\Formatters\DateTime;
 use PHPUnit\Framework\TestCase;
 
 class DateTimeTest extends TestCase

@@ -1,6 +1,6 @@
 <?php
 
-namespace Neuron\Data\Formatters;
+namespace Neuron\Formatters;
 
 /**
  * Base class for date based formatting.
