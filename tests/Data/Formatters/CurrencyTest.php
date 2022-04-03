@@ -1,5 +1,5 @@
 <?php
-use Neuron\Data\Formatters\Currency;
+use Neuron\Formatters\Currency;
 use PHPUnit\Framework\TestCase;
 
 class CurrencyTest extends TestCase

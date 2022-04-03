@@ -1,6 +1,6 @@
 <?php
 
-use Neuron\Data\Formatters\Date;
+use Neuron\Formatters\Date;
 use PHPUnit\Framework\TestCase;
 
 class DateTest extends TestCase
