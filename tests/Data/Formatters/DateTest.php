@@ -1,4 +1,5 @@
 <?php
+namespace Tests\Data\Formatters;
 
 use Neuron\Formatters\Date;
 use PHPUnit\Framework\TestCase;

@@ -3,7 +3,7 @@
 namespace Neuron\Formatters;
 
 /**
- * Phone number formatter.
+ * Formats phone numbers.
  */
 class PhoneNumber implements IFormatter
 {

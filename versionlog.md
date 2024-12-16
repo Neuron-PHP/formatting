@@ -1,4 +1,5 @@
-* Scheduled release
+## 0.6.1 2024-12-16
+* Updated test namespaces.
 
 ## 0.5.5 2022-04-04
 * Scheduled release

@@ -1,4 +1,6 @@
 <?php
+namespace Tests\Data\Formatters;
+
 use Neuron\Formatters\Currency;
 use PHPUnit\Framework\TestCase;
 

@@ -3,7 +3,7 @@
 namespace Neuron\Formatters;
 
 /**
- * Time formatter.
+ * Formats time.
  */
 class Time extends DateBase implements IFormatter
 {
