@@ -3,8 +3,9 @@
 namespace Neuron\Formatters;
 
 /**
- * Date formatter
+ * Formats dates
  */
+
 class Date extends DateBase implements IFormatter
 {
 	public function __construct()

@@ -3,8 +3,9 @@
 namespace Neuron\Formatters;
 
 /**
- * Currency formatter.
+ * Formats currency as html.
  */
+
 class Currency implements IFormatter
 {
 	private $_Format;
