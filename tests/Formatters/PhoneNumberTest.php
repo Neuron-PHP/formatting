@@ -1,5 +1,5 @@
 <?php
-namespace Tests\Data\Formatters;
+namespace Formatters;
 
 use Neuron\Formatters\PhoneNumber;
 use PHPUnit\Framework\TestCase;
