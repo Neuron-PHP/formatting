@@ -1,4 +1,4 @@
-## 0.6.5
+## 0.6.5 2025-01-13
 * Updated phone number formatter to support international.
 * Updated tests.
 
