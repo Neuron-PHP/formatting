@@ -7,12 +7,12 @@ namespace Neuron\Formatters;
  */
 class DateBase
 {
-	private $_Format;
+	private string $_Format;
 
 	/**
-	 * @return mixed
+	 * @return string
 	 */
-	public function getFormat()
+	public function getFormat() : string
 	{
 		return $this->_Format;
 	}
@@ -21,7 +21,7 @@ class DateBase
 	 * @param mixed $Format
 	 * @return DateBase
 	 */
-	public function setFormat( $Format )
+	public function setFormat( $Format ) : DateBase
 	{
 		$this->_Format = $Format;
 		return $this;
@@ -31,7 +31,7 @@ class DateBase
 	 * @param array $Parts
 	 * @return bool
 	 */
-	public static function ddmmyyyy( array $Parts )
+	public static function ddmmyyyy( array $Parts ) : bool
 	{
 		$Match = true;
 
@@ -59,7 +59,7 @@ class DateBase
 	 * @param array $Parts
 	 * @return bool
 	 */
-	public static function mmddyyyy( array $Parts )
+	public static function mmddyyyy( array $Parts ) : bool
 	{
 		$Match = true;
 
@@ -87,7 +87,7 @@ class DateBase
 	 * @param array $Parts
 	 * @return bool
 	 */
-	public static function yyyymmdd( array $Parts )
+	public static function yyyymmdd( array $Parts ) : bool
 	{
 		$Match = true;
 

@@ -15,4 +15,15 @@ class TimeTest extends TestCase
 			$Formatter->format( '13:30' )
 		);
 	}
+
+	public function testFormatWithFormat()
+	{
+		$Formatter = new Time();
+		$Formatter->setFormat( 'H:i:s' );
+
+		$this->assertEquals(
+			'13:30:40',
+			$Formatter->format( '13:30:40' )
+		);
+	}
 }
