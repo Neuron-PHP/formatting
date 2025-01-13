@@ -2,52 +2,93 @@
 
 namespace Neuron\Formatters;
 
+
 /**
  * Formats currency as html.
  */
 
 class Currency implements IFormatter
 {
-	private $_Format;
-	private $_PadLength;
+	private string $_Format;
+	private int $_PadLength;
+	private string $_PadCharacter;
+	private string $_CurrencySymbol;
 
 	public function __construct()
 	{
+		$this->setCurrencySymbol( '$' );
+		$this->setPadCharacter( '_' );
 		$this->setFormat( "%01.2f" );
 		$this->setPadLength( 9 );
 	}
 
 	/**
-	 * @return mixed
+	 * @return string
 	 */
-	public function getFormat()
+	public function getPadCharacter(): string
+	{
+		return $this->_PadCharacter;
+	}
+
+	/**
+	 * @param string $PadCharacter
+	 * @return
+	 */
+	public function setPadCharacter( string $PadCharacter ): Currency
+	{
+		$this->_PadCharacter = $PadCharacter;
+		return $this;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function getCurrencySymbol(): string
+	{
+		return $this->_CurrencySymbol;
+	}
+
+	/**
+	 * @param string $CurrencySymbol
+	 * @return Currency
+	 */
+	public function setCurrencySymbol( string $CurrencySymbol ): Currency
+	{
+		$this->_CurrencySymbol = $CurrencySymbol;
+		return $this;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function getFormat() : string
 	{
 		return $this->_Format;
 	}
 
 	/**
-	 * @param mixed $Format
+	 * @param string $Format
 	 * @return Currency
 	 */
-	public function setFormat( $Format )
+	public function setFormat( string $Format ) : Currency
 	{
 		$this->_Format = $Format;
 		return $this;
 	}
 
 	/**
-	 * @return mixed
+	 * @return int
 	 */
-	public function getPadLength()
+	public function getPadLength() : int
 	{
 		return $this->_PadLength;
 	}
 
 	/**
-	 * @param mixed $PadLength
+	 * @param int $PadLength
 	 * @return Currency
 	 */
-	public function setPadLength( $PadLength )
+	public function setPadLength( int $PadLength ) : Currency
 	{
 		$this->_PadLength = $PadLength;
 		return $this;
@@ -56,16 +97,14 @@ class Currency implements IFormatter
 	public function format( $Data ): string
 	{
 		return
-			"<pre style='display:inline; background-color: inherit; color:white; border: none;'>".
-			str_pad(
+			$this->getCurrencySymbol().str_pad(
 				sprintf(
 					$this->getFormat(),
 					round( $Data, 2 )
 				),
 				$this->getPadLength(),
-				'_',
+				$this->getPadCharacter(),
 				STR_PAD_LEFT
-			).
-			"</pre>";
+			);
 	}
 }
