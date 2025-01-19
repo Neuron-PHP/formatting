@@ -30,6 +30,36 @@ class DateTest extends TestCase
 			$Formatter->format( '23/12/2018')
 		);
 
+		$this->assertEquals(
+			'',
+			$Formatter->format( '23/12')
+		);
+
+		$this->assertEquals(
+			'',
+			$Formatter->format( '23/13/2018')
+		);
+
+		$this->assertEquals(
+			'',
+			$Formatter->format( '13/32/2018')
+		);
+
+		$this->assertEquals(
+			'',
+			$Formatter->format( '32/12/2018')
+		);
+
+		$this->assertEquals(
+			'',
+			$Formatter->format( '3244/1244/20184')
+		);
+
+		$this->assertEquals(
+			'',
+			$Formatter->format( '3244124420184')
+		);
+
 	}
 
 	public function testFormatWithFormat()

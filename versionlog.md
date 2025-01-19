@@ -1,4 +1,5 @@
 ## 0.6.6
+* Upgraded tests to 100% coverage.
 
 ## 0.6.5 2025-01-13
 * Updated phone number formatter to support international.

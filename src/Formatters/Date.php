@@ -16,6 +16,11 @@ class Date extends DateBase implements IFormatter
 	public function format( $Data ): string
 	{
 		$Date = self::normalizeDate( $Data );
+		if( $Date === '' )
+		{
+			return '';
+		}
+
 		return date( $this->getFormat(), strtotime( $Date ) );
 	}
 }
