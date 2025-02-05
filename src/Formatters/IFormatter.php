@@ -7,5 +7,5 @@ namespace Neuron\Formatters;
  */
 interface IFormatter
 {
-	public function format( $Data ) : string;
+	public function format( string $Data ) : ?string;
 }

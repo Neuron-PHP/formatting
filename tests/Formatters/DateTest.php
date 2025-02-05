@@ -31,32 +31,32 @@ class DateTest extends TestCase
 		);
 
 		$this->assertEquals(
-			'',
+			null,
 			$Formatter->format( '23/12')
 		);
 
 		$this->assertEquals(
-			'',
+			null,
 			$Formatter->format( '23/13/2018')
 		);
 
 		$this->assertEquals(
-			'',
+			null,
 			$Formatter->format( '13/32/2018')
 		);
 
 		$this->assertEquals(
-			'',
+			null,
 			$Formatter->format( '32/12/2018')
 		);
 
 		$this->assertEquals(
-			'',
+			null,
 			$Formatter->format( '3244/1244/20184')
 		);
 
 		$this->assertEquals(
-			'',
+			null,
 			$Formatter->format( '3244124420184')
 		);
 

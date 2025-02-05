@@ -12,7 +12,12 @@ class DateTime extends DateBase implements IFormatter
 		$this->setFormat( "Y-m-d g:i a" );
 	}
 
-	public function format( $Data ): string
+	/**
+	 * @param string $Data
+	 * @return string|null
+	 */
+
+	public function format( string $Data ): ?string
 	{
 		$Parts = explode( ' ', $Data );
 		$Date  = self::normalizeDate( $Parts[ 0 ] );

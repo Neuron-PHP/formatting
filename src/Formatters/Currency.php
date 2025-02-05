@@ -94,7 +94,12 @@ class Currency implements IFormatter
 		return $this;
 	}
 
-	public function format( $Data ): string
+	/**
+	 * @param string $Data
+	 * @return string|null
+	 */
+
+	public function format( string $Data ): ?string
 	{
 		return
 			$this->getCurrencySymbol().str_pad(

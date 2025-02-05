@@ -13,12 +13,17 @@ class Date extends DateBase implements IFormatter
 		$this->setFormat( "Y-m-d" );
 	}
 
-	public function format( $Data ): string
+	/**
+	 * @param string $Data
+	 * @return string|null
+	 */
+
+	public function format( string $Data ): ?string
 	{
 		$Date = self::normalizeDate( $Data );
-		if( $Date === '' )
+		if( $Date === null )
 		{
-			return '';
+			return null;
 		}
 
 		return date( $this->getFormat(), strtotime( $Date ) );
