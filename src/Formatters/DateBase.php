@@ -117,9 +117,10 @@ class DateBase
 	 * Takes dd/mm/yyyy, mm/dd/yyyy or yyyy/mm/dd
 	 *
 	 * @param string $Date
-	 * @return string
+	 * @return ?string
 	 */
-	public static function normalizeDate( string $Date ) : string
+
+	public static function normalizeDate( string $Date ) : ?string
 	{
 		$Date  = trim( $Date );
 		$Parts = explode( ' ', $Date );
@@ -143,14 +144,14 @@ class DateBase
 
 		if( !$Delimiter )
 		{
-			return false;
+			return null;
 		}
 
 		$Parts = explode( $Delimiter, $Date );
 
 		if( count( $Parts ) != 3 )
 		{
-			return false;
+			return null;
 		}
 
 		if( self::yyyymmdd( $Parts ) )
@@ -168,6 +169,6 @@ class DateBase
 			return $Parts[ 2 ].'-'.$Parts[ 1 ].'-'.$Parts[ 0 ];
 		}
 
-		return '';
+		return null;
 	}
 }
