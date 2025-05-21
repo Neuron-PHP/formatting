@@ -25,6 +25,7 @@ class Currency implements IFormatter
 	/**
 	 * @return string
 	 */
+
 	public function getPadCharacter(): string
 	{
 		return $this->_PadCharacter;
@@ -32,8 +33,9 @@ class Currency implements IFormatter
 
 	/**
 	 * @param string $PadCharacter
-	 * @return
+	 * @return Currency
 	 */
+
 	public function setPadCharacter( string $PadCharacter ): Currency
 	{
 		$this->_PadCharacter = $PadCharacter;
@@ -43,6 +45,7 @@ class Currency implements IFormatter
 	/**
 	 * @return string
 	 */
+
 	public function getCurrencySymbol(): string
 	{
 		return $this->_CurrencySymbol;
@@ -52,6 +55,7 @@ class Currency implements IFormatter
 	 * @param string $CurrencySymbol
 	 * @return Currency
 	 */
+
 	public function setCurrencySymbol( string $CurrencySymbol ): Currency
 	{
 		$this->_CurrencySymbol = $CurrencySymbol;
@@ -61,6 +65,7 @@ class Currency implements IFormatter
 	/**
 	 * @return string
 	 */
+
 	public function getFormat() : string
 	{
 		return $this->_Format;
@@ -70,6 +75,7 @@ class Currency implements IFormatter
 	 * @param string $Format
 	 * @return Currency
 	 */
+
 	public function setFormat( string $Format ) : Currency
 	{
 		$this->_Format = $Format;
@@ -79,6 +85,7 @@ class Currency implements IFormatter
 	/**
 	 * @return int
 	 */
+
 	public function getPadLength() : int
 	{
 		return $this->_PadLength;
@@ -88,6 +95,7 @@ class Currency implements IFormatter
 	 * @param int $PadLength
 	 * @return Currency
 	 */
+
 	public function setPadLength( int $PadLength ) : Currency
 	{
 		$this->_PadLength = $PadLength;

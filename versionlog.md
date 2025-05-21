@@ -1,6 +1,6 @@
 ## 0.7.1
 
-## 0.6.6 2025-02-06
+## 0.7.0 2025-02-06
 * Upgraded tests to 100% coverage.
 * Refactored code.
 
