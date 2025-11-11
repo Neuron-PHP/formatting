@@ -14,18 +14,18 @@ class Date extends DateBase implements IFormatter
 	}
 
 	/**
-	 * @param string $Data
+	 * @param string $data
 	 * @return string|null
 	 */
 
-	public function format( string $Data ): ?string
+	public function format( string $data ): ?string
 	{
-		$Date = self::normalizeDate( $Data );
-		if( $Date === null )
+		$date = self::normalizeDate( $data );
+		if( $date === null )
 		{
 			return null;
 		}
 
-		return date( $this->getFormat(), strtotime( $Date ) );
+		return date( $this->getFormat(), strtotime( $date ) );
 	}
 }

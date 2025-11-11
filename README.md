@@ -1,4 +1,4 @@
-[![Build Status](https://app.travis-ci.com/Neuron-PHP/formatting.svg?token=F8zCwpT7x7Res7J2N4vF&branch=master)](https://app.travis-ci.com/Neuron-PHP/formatting)
+[![CI](https://github.com/Neuron-PHP/formatting/actions/workflows/ci.yml/badge.svg)](https://github.com/Neuron-PHP/formatting/actions)
 
 # Neuron-PHP Formatting
 

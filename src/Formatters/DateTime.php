@@ -13,22 +13,22 @@ class DateTime extends DateBase implements IFormatter
 	}
 
 	/**
-	 * @param string $Data
+	 * @param string $data
 	 * @return string|null
 	 */
 
-	public function format( string $Data ): ?string
+	public function format( string $data ): ?string
 	{
-		$Parts = explode( ' ', $Data );
-		$Date  = self::normalizeDate( $Parts[ 0 ] );
+		$parts = explode( ' ', $data );
+		$date  = self::normalizeDate( $parts[ 0 ] );
 
-		$DateTime = $Date.' '.$Parts[ 1 ];
+		$dateTime = $date.' '.$parts[ 1 ];
 
-		if( count( $Parts ) > 2 )
+		if( count( $parts ) > 2 )
 		{
-			$DateTime .= ' '.$Parts[ 2 ];
+			$dateTime .= ' '.$parts[ 2 ];
 		}
 
-		return date( $this->getFormat(), strtotime( $DateTime ) );
+		return date( $this->getFormat(), strtotime( $dateTime ) );
 	}
 }

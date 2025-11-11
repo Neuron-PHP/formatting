@@ -7,108 +7,108 @@ namespace Neuron\Formatters;
  */
 class DateBase
 {
-	private string $_Format;
+	private string $_format;
 
 	/**
 	 * @return string
 	 */
 	public function getFormat() : string
 	{
-		return $this->_Format;
+		return $this->_format;
 	}
 
 	/**
-	 * @param mixed $Format
+	 * @param mixed $format
 	 * @return DateBase
 	 */
-	public function setFormat( $Format ) : DateBase
+	public function setFormat( $format ) : DateBase
 	{
-		$this->_Format = $Format;
+		$this->_format = $format;
 		return $this;
 	}
 
 	/**
-	 * @param array $Parts
+	 * @param array $parts
 	 * @return bool
 	 */
-	public static function ddmmyyyy( array $Parts ) : bool
+	public static function ddmmyyyy( array $parts ) : bool
 	{
-		$Match = true;
+		$match = true;
 
-		if( strlen( $Parts[ 0 ] ) > 2 ||
-			strlen( $Parts[ 1 ] ) > 2 ||
-			strlen( $Parts[ 2 ] ) != 4 )
+		if( strlen( $parts[ 0 ] ) > 2 ||
+			strlen( $parts[ 1 ] ) > 2 ||
+			strlen( $parts[ 2 ] ) != 4 )
 		{
-			$Match = false;
+			$match = false;
 		}
 
-		if( $Parts[ 0 ] > 31 )
+		if( $parts[ 0 ] > 31 )
 		{
-			$Match = false;
+			$match = false;
 		}
 
-		if( $Parts[ 1 ] > 12 )
+		if( $parts[ 1 ] > 12 )
 		{
-			$Match = false;
+			$match = false;
 		}
 
-		return $Match;
+		return $match;
 	}
 
 	/**
-	 * @param array $Parts
+	 * @param array $parts
 	 * @return bool
 	 */
-	public static function mmddyyyy( array $Parts ) : bool
+	public static function mmddyyyy( array $parts ) : bool
 	{
-		$Match = true;
+		$match = true;
 
-		if( strlen( $Parts[ 0 ] ) > 2 ||
-			strlen( $Parts[ 1 ] ) > 2 ||
-			strlen( $Parts[ 2 ] ) != 4 )
+		if( strlen( $parts[ 0 ] ) > 2 ||
+			strlen( $parts[ 1 ] ) > 2 ||
+			strlen( $parts[ 2 ] ) != 4 )
 		{
-			$Match = false;
+			$match = false;
 		}
 
-		if( $Parts[ 0 ] > 12 )
+		if( $parts[ 0 ] > 12 )
 		{
-			$Match = false;
+			$match = false;
 		}
 
-		if( $Parts[ 1 ] > 31 )
+		if( $parts[ 1 ] > 31 )
 		{
-			$Match = false;
+			$match = false;
 		}
 
-		return $Match;
+		return $match;
 	}
 
 	/**
-	 * @param array $Parts
+	 * @param array $parts
 	 * @return bool
 	 */
-	public static function yyyymmdd( array $Parts ) : bool
+	public static function yyyymmdd( array $parts ) : bool
 	{
-		$Match = true;
+		$match = true;
 
-		if( strlen( $Parts[ 0 ] ) != 4 ||
-			strlen( $Parts[ 1 ] ) > 2 ||
-			strlen( $Parts[ 2 ] ) > 2 )
+		if( strlen( $parts[ 0 ] ) != 4 ||
+			strlen( $parts[ 1 ] ) > 2 ||
+			strlen( $parts[ 2 ] ) > 2 )
 		{
-			$Match = false;
+			$match = false;
 		}
 
-		if( $Parts[ 1 ] > 12 )
+		if( $parts[ 1 ] > 12 )
 		{
-			$Match = false;
+			$match = false;
 		}
 
-		if( $Parts[ 2 ] > 31 )
+		if( $parts[ 2 ] > 31 )
 		{
-			$Match = false;
+			$match = false;
 		}
 
-		return $Match;
+		return $match;
 	}
 
 	/**
@@ -116,57 +116,57 @@ class DateBase
 	 * Handles -, / and . as delimiters.
 	 * Takes dd/mm/yyyy, mm/dd/yyyy or yyyy/mm/dd
 	 *
-	 * @param string $Date
+	 * @param string $date
 	 * @return ?string
 	 */
 
-	public static function normalizeDate( string $Date ) : ?string
+	public static function normalizeDate( string $date ) : ?string
 	{
-		$Date  = trim( $Date );
-		$Parts = explode( ' ', $Date );
+		$date  = trim( $date );
+		$parts = explode( ' ', $date );
 
-		if( $Parts )
+		if( $parts )
 		{
-			$Date = $Parts[ 0 ];
+			$date = $parts[ 0 ];
 		}
 
-		$Delimiter = '';
+		$delimiter = '';
 
-		$Separators = [ '-', '/', '.' ];
+		$separators = [ '-', '/', '.' ];
 
-		foreach( $Separators as $Separator )
+		foreach( $separators as $separator )
 		{
-			if( strstr( $Date, $Separator ) )
+			if( strstr( $date, $separator ) )
 			{
-				$Delimiter = $Separator;
+				$delimiter = $separator;
 			}
 		}
 
-		if( !$Delimiter )
+		if( !$delimiter )
 		{
 			return null;
 		}
 
-		$Parts = explode( $Delimiter, $Date );
+		$parts = explode( $delimiter, $date );
 
-		if( count( $Parts ) != 3 )
+		if( count( $parts ) != 3 )
 		{
 			return null;
 		}
 
-		if( self::yyyymmdd( $Parts ) )
+		if( self::yyyymmdd( $parts ) )
 		{
-			return $Parts[ 0 ].'-'.$Parts[ 1 ].'-'.$Parts[ 2 ];
+			return $parts[ 0 ].'-'.$parts[ 1 ].'-'.$parts[ 2 ];
 		}
 
-		if( self::mmddyyyy( $Parts ) )
+		if( self::mmddyyyy( $parts ) )
 		{
-			return $Parts[ 2 ].'-'.$Parts[ 0 ].'-'.$Parts[ 1 ];
+			return $parts[ 2 ].'-'.$parts[ 0 ].'-'.$parts[ 1 ];
 		}
 
-		if( self::ddmmyyyy( $Parts ) )
+		if( self::ddmmyyyy( $parts ) )
 		{
-			return $Parts[ 2 ].'-'.$Parts[ 1 ].'-'.$Parts[ 0 ];
+			return $parts[ 2 ].'-'.$parts[ 1 ].'-'.$parts[ 0 ];
 		}
 
 		return null;

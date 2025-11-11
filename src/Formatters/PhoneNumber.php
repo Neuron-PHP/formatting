@@ -9,72 +9,72 @@ namespace Neuron\Formatters;
 class PhoneNumber implements IFormatter
 {
 	/**
-	 * @param string $Data
+	 * @param string $data
 	 * @return string|null
 	 */
 
-	public function format( string $Data ): ?string
+	public function format( string $data ): ?string
 	{
-		$Phone = preg_replace("/[^0-9]/", "", $Data);
+		$phone = preg_replace("/[^0-9]/", "", $data);
 
-		if( strlen( $Phone ) == 7 )
+		if( strlen( $phone ) == 7 )
 		{
-			$Phone = $this->format7Digit( $Phone );
+			$phone = $this->format7Digit( $phone );
 		}
-		else if( strlen( $Phone ) == 10 )
+		else if( strlen( $phone ) == 10 )
 		{
-			$Phone = $this->format10Digit( $Phone );
+			$phone = $this->format10Digit( $phone );
 		}
-		else if( strlen( $Phone ) > 10 )
+		else if( strlen( $phone ) > 10 )
 		{
-			$Phone = $this->formatInternational( $Phone );
+			$phone = $this->formatInternational( $phone );
 		}
 
-		return $Phone;
+		return $phone;
 	}
 
 	/**
-	 * @param array|string|null $Phone
+	 * @param array|string|null $phone
 	 * @return string
 	 */
 
-	protected function format7Digit( array|string|null $Phone ): string
+	protected function format7Digit( array|string|null $phone ): string
 	{
-		$Pre   = substr( $Phone, 0, 3 );
-		$Post  = substr( $Phone, 3, 4 );
-		$Phone = "$Pre-$Post";
+		$pre   = substr( $phone, 0, 3 );
+		$post  = substr( $phone, 3, 4 );
+		$phone = "$pre-$post";
 
-		return $Phone;
+		return $phone;
 	}
 
 	/**
-	 * @param array|string|null $Phone
+	 * @param array|string|null $phone
 	 * @return string
 	 */
 
-	protected function format10Digit( array|string|null $Phone ): string
+	protected function format10Digit( array|string|null $phone ): string
 	{
-		$Area  = substr( $Phone, 0, 3 );
-		$Pre   = substr( $Phone, 3, 3 );
-		$Post  = substr( $Phone, 6, 4 );
-		$Phone = "$Area-$Pre-$Post";
+		$area  = substr( $phone, 0, 3 );
+		$pre   = substr( $phone, 3, 3 );
+		$post  = substr( $phone, 6, 4 );
+		$phone = "$area-$pre-$post";
 
-		return $Phone;
+		return $phone;
 	}
 
 	/**
-	 * @param array|string|null $Phone
+	 * @param array|string|null $phone
 	 * @return string
 	 */
 
-	protected function formatInternational( array|string|null $Phone ): string
+	protected function formatInternational( array|string|null $phone ): string
 	{
-		$CountryCode	= substr($Phone, 0, strlen($Phone) - 10);
-		$Area				= substr($Phone, -10, 2);
-		$Pre				= substr($Phone, -8, 3);
-		$Post				= substr($Phone, -5, 5);
-		$Phone			= "+$CountryCode $Area $Pre $Post";
+		$countryCode	= substr($phone, 0, strlen($phone) - 10);
+		$area				= substr($phone, -10, 2);
+		$pre				= substr($phone, -8, 3);
+		$post				= substr($phone, -5, 5);
+		$phone			= "+$countryCode $area $pre $post";
 
-		return $Phone;
+		return $phone;
 	}
 }

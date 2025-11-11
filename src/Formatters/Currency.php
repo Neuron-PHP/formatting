@@ -9,10 +9,10 @@ namespace Neuron\Formatters;
 
 class Currency implements IFormatter
 {
-	private string $_Format;
-	private int $_PadLength;
-	private string $_PadCharacter;
-	private string $_CurrencySymbol;
+	private string $_format;
+	private int $_padLength;
+	private string $_padCharacter;
+	private string $_currencySymbol;
 
 	public function __construct()
 	{
@@ -25,87 +25,95 @@ class Currency implements IFormatter
 	/**
 	 * @return string
 	 */
+
 	public function getPadCharacter(): string
 	{
-		return $this->_PadCharacter;
+		return $this->_padCharacter;
 	}
 
 	/**
-	 * @param string $PadCharacter
-	 * @return
+	 * @param string $padCharacter
+	 * @return Currency
 	 */
-	public function setPadCharacter( string $PadCharacter ): Currency
+
+	public function setPadCharacter( string $padCharacter ): Currency
 	{
-		$this->_PadCharacter = $PadCharacter;
+		$this->_padCharacter = $padCharacter;
 		return $this;
 	}
 
 	/**
 	 * @return string
 	 */
+
 	public function getCurrencySymbol(): string
 	{
-		return $this->_CurrencySymbol;
+		return $this->_currencySymbol;
 	}
 
 	/**
-	 * @param string $CurrencySymbol
+	 * @param string $currencySymbol
 	 * @return Currency
 	 */
-	public function setCurrencySymbol( string $CurrencySymbol ): Currency
+
+	public function setCurrencySymbol( string $currencySymbol ): Currency
 	{
-		$this->_CurrencySymbol = $CurrencySymbol;
+		$this->_currencySymbol = $currencySymbol;
 		return $this;
 	}
 
 	/**
 	 * @return string
 	 */
+
 	public function getFormat() : string
 	{
-		return $this->_Format;
+		return $this->_format;
 	}
 
 	/**
-	 * @param string $Format
+	 * @param string $format
 	 * @return Currency
 	 */
-	public function setFormat( string $Format ) : Currency
+
+	public function setFormat( string $format ) : Currency
 	{
-		$this->_Format = $Format;
+		$this->_format = $format;
 		return $this;
 	}
 
 	/**
 	 * @return int
 	 */
+
 	public function getPadLength() : int
 	{
-		return $this->_PadLength;
+		return $this->_padLength;
 	}
 
 	/**
-	 * @param int $PadLength
+	 * @param int $padLength
 	 * @return Currency
 	 */
-	public function setPadLength( int $PadLength ) : Currency
+
+	public function setPadLength( int $padLength ) : Currency
 	{
-		$this->_PadLength = $PadLength;
+		$this->_padLength = $padLength;
 		return $this;
 	}
 
 	/**
-	 * @param string $Data
+	 * @param string $data
 	 * @return string|null
 	 */
 
-	public function format( string $Data ): ?string
+	public function format( string $data ): ?string
 	{
 		return
 			$this->getCurrencySymbol().str_pad(
 				sprintf(
 					$this->getFormat(),
-					round( $Data, 2 )
+					round( $data, 2 )
 				),
 				$this->getPadLength(),
 				$this->getPadCharacter(),

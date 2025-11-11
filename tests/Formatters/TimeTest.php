@@ -8,22 +8,22 @@ class TimeTest extends TestCase
 {
 	public function testFormat()
 	{
-		$Formatter = new Time();
+		$formatter = new Time();
 
 		$this->assertEquals(
 			'1:30 pm',
-			$Formatter->format( '13:30' )
+			$formatter->format( '13:30' )
 		);
 	}
 
 	public function testFormatWithFormat()
 	{
-		$Formatter = new Time();
-		$Formatter->setFormat( 'H:i:s' );
+		$formatter = new Time();
+		$formatter->setFormat( 'H:i:s' );
 
 		$this->assertEquals(
 			'13:30:40',
-			$Formatter->format( '13:30:40' )
+			$formatter->format( '13:30:40' )
 		);
 	}
 }
