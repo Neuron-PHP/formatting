@@ -1,4 +1,5 @@
 ## 0.7.1
+* Convert to camelcase.
 
 ## 0.7.0 2025-02-06
 * Upgraded tests to 100% coverage.

@@ -34,9 +34,9 @@ interface IFormatter
 {
 	/**
 	 * Formats the provided data according to the formatter's rules.
-	 * 
-	 * @param string $Data The raw data to be formatted
+	 *
+	 * @param string $data The raw data to be formatted
 	 * @return string|null The formatted data, or null if formatting fails
 	 */
-	public function format( string $Data ) : ?string;
+	public function format( string $data ) : ?string;
 }

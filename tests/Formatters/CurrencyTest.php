@@ -10,47 +10,47 @@ class CurrencyTest extends TestCase
 {
 	public function testFormat()
 	{
-		$Formatter = new Currency();
+		$formatter = new Currency();
 
 		$this->assertStringContainsString(
 			"1.00",
-			$Formatter->format( 1 )
+			$formatter->format( 1 )
 		);
 	}
 
 	public function testFormatWithSymbol()
 	{
-		$Formatter = new Currency();
-		$Formatter->setCurrencySymbol( "£" );
+		$formatter = new Currency();
+		$formatter->setCurrencySymbol( "£" );
 
 		$this->assertStringContainsString(
 			"£_____1.00",
-			$Formatter->format( 1 )
+			$formatter->format( 1 )
 		);
 	}
 
 	public function testFormatWithSymbolAndPadding()
 	{
-		$Formatter = new Currency();
-		$Formatter->setCurrencySymbol( "£" );
-		$Formatter->setPadLength( 11 );
+		$formatter = new Currency();
+		$formatter->setCurrencySymbol( "£" );
+		$formatter->setPadLength( 11 );
 
 		$this->assertStringContainsString(
 			"£_______1.00",
-			$Formatter->format( 1 )
+			$formatter->format( 1 )
 		);
 	}
 
 	public function testFormatWithSymbolAndPaddingAndCharacter()
 	{
-		$Formatter = new Currency();
-		$Formatter->setCurrencySymbol( "£" );
-		$Formatter->setPadLength( 11 );
-		$Formatter->setPadCharacter( ' ' );
+		$formatter = new Currency();
+		$formatter->setCurrencySymbol( "£" );
+		$formatter->setPadLength( 11 );
+		$formatter->setPadCharacter( ' ' );
 
 		$this->assertStringContainsString(
 			"£       1.00",
-			$Formatter->format( 1 )
+			$formatter->format( 1 )
 		);
 	}
 }

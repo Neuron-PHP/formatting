@@ -14,12 +14,12 @@ class Time extends DateBase implements IFormatter
 	}
 
 	/**
-	 * @param string $Data
+	 * @param string $data
 	 * @return string|null
 	 */
 
-	public function format( string $Data ): ?string
+	public function format( string $data ): ?string
 	{
-		return date( $this->getFormat(), strtotime( $Data ) );
+		return date( $this->getFormat(), strtotime( $data ) );
 	}
 }
